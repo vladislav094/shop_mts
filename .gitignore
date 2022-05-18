@@ -1,0 +1,7 @@
+.venv/
+.idea/
+.python-version
+geckodriver
+tests/tests_ui/.pytest_cache
+tests/tests_ui/geckodriver.log
+
