@@ -85,8 +85,3 @@ def get_actions(get_webdriver):
         # """Кнопка [Заказать]. Не применяется для отладки """
         # actions.move_to_element(order_button).click().perform()
         # driver.quit()
-
-
-
-        
-
