@@ -27,7 +27,7 @@ def get_webdriver(get_firefox_options):
     geckodriver = Service('/home/vladislav/Projects/shop_mts/geckodriver')
     driver = webdriver.Firefox(service=geckodriver, options=options)
     driver.set_window_rect(x=None, y=None, width=1920, height=1080)
-    driver.implicitly_wait(5)
+    driver.implicitly_wait(10)
     return driver
 
 @pytest.fixture(scope='function')
@@ -38,12 +38,13 @@ def setup(request, get_webdriver):
         request.cls.driver = driver
     driver.get(url)
     yield driver
-    # driver.quit()
+    driver.quit()
 
 @pytest.fixture
 def get_actions(get_webdriver):
     actions = webdriver.ActionChains(get_webdriver)
     return actions
+
 
 
 # @pytest.mark.usefixtures('setup')
